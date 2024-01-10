@@ -1,9 +1,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using UserService.Data;
 using UserService.Models;
+
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddDbContext<UserServiceContext>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString("UserServiceContext") ?? throw new InvalidOperationException("Connection string 'UserServiceContext' not found.")));
+
+var connectionStringMysql = builder.Configuration.GetConnectionString("connectionMysql");
+
+builder.Services.AddDbContext<APIDbContext>(options =>
+    options.UseMySql(connectionStringMysql
+    ,ServerVersion.Parse("8.2.0-Mysql")
+    )
+);
 
 // Add services to the container.
 

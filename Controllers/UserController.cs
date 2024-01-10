@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using UserService.Data;
 using UserService.Models;
 
 namespace dotnetwebapi.Controllers
@@ -13,9 +14,9 @@ namespace dotnetwebapi.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        private readonly UserServiceContext _context;
+        private readonly APIDbContext _context;
 
-        public UserController(UserServiceContext context)
+        public UserController(APIDbContext context)
         {
             _context = context;
         }

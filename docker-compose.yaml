@@ -1,0 +1,24 @@
+﻿version: '3'
+services:
+
+  ms-sql-server:
+    image: mcr.microsoft.com/mssql/server:2017-latest-ubuntu
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: "Senha123"
+      MSSQL_PID: Express
+    ports:
+      - "1433:1433"
+      
+  book-app:
+    build: .
+    depends_on:
+      - ms-sql-server
+    environment:
+      DbServer: "ms-sql-server"
+      DbPort: "1433"
+      DbUser: "sa"
+      Password: "Senha123"
+      Database: "bookDb"
+    ports: 
+      - "8090:80"
