@@ -1,24 +1,25 @@
 ﻿version: '3'
-services:
 
-  ms-sql-server:
-    image: mcr.microsoft.com/mssql/server:2017-latest-ubuntu
+services:
+  mysql:
+    image: mysql:latest
     environment:
-      ACCEPT_EULA: "Y"
-      SA_PASSWORD: "Senha123"
-      MSSQL_PID: Express
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: your_database_name
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
     ports:
-      - "1433:1433"
+      - "3306:3306"
       
-  book-app:
+  dotnetwebapi:
     build: .
     depends_on:
       - ms-sql-server
     environment:
-      DbServer: "ms-sql-server"
-      DbPort: "1433"
-      DbUser: "sa"
-      Password: "Senha123"
+      DbServer: "mysql"
+      DbPort: "33060"
+      DbUser: "root"
+      Password: "root"
       Database: "bookDb"
     ports: 
-      - "8090:80"
+      - "8080:80"

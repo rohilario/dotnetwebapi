@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using UserService.Models;
+using dotnetwebapi.Models;
 
-namespace UserService.Data
+namespace dotnetwebapi.Data
 {
     public class APIDbContext : DbContext
     {
@@ -17,6 +17,8 @@ namespace UserService.Data
         public DbSet<User> User { get; set; } = default!;
 
         public DbSet<UserPermission> UserPermission { get; set; } = default!;
+
+        public DbSet<Permission> Permission { get; set; } = default!;
         
     }
 }

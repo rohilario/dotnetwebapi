@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace UserService.Models
+namespace dotnetwebapi.Models
 {
     public class UserPermission
     {
         [Required]
-        public int Id { get; set; }
+        public int UserPermissionId { get; set; }
 
         //FK
         [Required]

@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using UserService.Data;
+using dotnetwebapi.Data;
 
 #nullable disable
 
@@ -15,31 +15,50 @@ namespace dotnetwebapi.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.12")
+                .HasAnnotation("ProductVersion", "7.0.2")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
-            modelBuilder.Entity("UserService.Models.User", b =>
+            modelBuilder.Entity("dotnetwebapi.Models.Permission", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("PermissionId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<string>("Cpf")
+                    b.Property<string>("PermissionDescription")
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("PermissionName")
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.HasKey("Id");
+                    b.HasKey("PermissionId");
+
+                    b.ToTable("Permission");
+                });
+
+            modelBuilder.Entity("dotnetwebapi.Models.User", b =>
+                {
+                    b.Property<int>("UserId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserCpf")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("UserName")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("UserId");
 
                     b.ToTable("User");
                 });
 
-            modelBuilder.Entity("UserService.Models.UserPermission", b =>
+            modelBuilder.Entity("dotnetwebapi.Models.UserPermission", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("UserPermissionId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
@@ -49,7 +68,7 @@ namespace dotnetwebapi.Migrations
                     b.Property<int>("UserId")
                         .HasColumnType("int");
 
-                    b.HasKey("Id");
+                    b.HasKey("UserPermissionId");
 
                     b.ToTable("UserPermission");
                 });

@@ -1,14 +1,16 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace UserService.Models
+namespace dotnetwebapi.Models
 {
     public class User
     {
-        public int Id { get; set; }
         [Required]
-        public string Name { get; set; }
-        public string Cpf { get; set; }
+        public int UserId { get; set; }
+        [Required]
+        public required string UserName { get; set; }
+        [Required]
+        public required string UserCpf { get; set; }
 
     }
 }
