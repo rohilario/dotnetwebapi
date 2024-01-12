@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using dotnetwebapi.Data;
 using dotnetwebapi.Models;
 using dotnetwebapi.Services;
+using Microsoft.AspNetCore.Authorization;
 
 namespace dotnetwebapi.Controllers
 {
@@ -20,6 +21,7 @@ namespace dotnetwebapi.Controllers
 
         // GET: api/User
         [HttpGet("permissionlist")]
+        [Authorize]
         public IEnumerable<Permission> GetPermissionList()
         {
             var permissionList = permissionService.GetPermissionList();

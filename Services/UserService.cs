@@ -41,5 +41,11 @@ namespace dotnetwebapi.Services
             _dbContext.SaveChanges();
             return result != null ? true : false;
         }
+
+        public User GetUserByAuth(string name, string passwd)
+        {
+            return _dbContext.User.Where(x => x.UserName == name && x.passwd == passwd).FirstOrDefault();
+            
+        }
     }
 }
