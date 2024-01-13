@@ -1,5 +1,33 @@
 # DotNET Web API
-API RESTFULL COM .NET 7 + EF 7 + JWT + SERILOG COM MONGDB
+API RESTFULL
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Price](https://img.shields.io/badge/price-FREE-0098f7.svg)](https://github.com/codedthemes/mantis-free-react-admin-template/blob/main/LICENSE)
+[![GitHub package version](https://img.shields.io/github/package-json/v/codedthemes/mantis-free-react-admin-template)](https://github.com/codedthemes/mantis-free-react-admin-template/)
+
+## Description
+
+```
+|  Stack                                         |  Description                                                      |
+| ---------------------------------------------- | :---------------------------------------------------------------- |
+| ✓ .NET Core 7 Web API Project Base             | ASP NET Web API Project Base                                      |
+| ✓ Entity Framework 7                           | ✓ CRUD Base With 3 Class                                          |
+| ✓ MySQL DB                                     | ✓ Data Context Connection DB Ajustable (For others DB`s)          |
+| ✓ MongoDB                                      | ✓ For logs and token storage                                      |
+| ✓ Auth Service                                 | ✓ JWT authentication                                              |
+| ✓ MVC                                          | ✓ MVC Arch.                                                       |
+| ✓ Serilog                                      | ✓ Make logs                                                       |
+| ✓ Swagger                                      | ✓ Open API Swagger Test / Doc                                     |
+
+```
+
+## Getting started
+
+Clone from GitHub
+
+```
+git clone [https://github.com/codedthemes/mantis-free-react-admin-template.git](https://github.com/rohilario/dotnetwebapi.git)
+
+```
 
 ## Project setup
 ```
@@ -16,7 +44,6 @@ npm run serve
 npm run build
 ```
 
+## Documentation
 
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+[Dot Net Web API documentation](http://localhost/swagger) helps you out in all aspects from Installation to deployment.
