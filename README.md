@@ -25,7 +25,7 @@ Implemented unit tests with xunit.
 -  ✓ Docker
 -  ✓ Docker Compose
 
-## Diagram Class ##
+## Entity Relationship Diagram - DER ##
 
 ``` mermaid
 
