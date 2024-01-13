@@ -4,7 +4,7 @@
     <TargetFramework>net7.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <Description>WEB API .NET + EF + MYSQL</Description>
+    <Description>.NET 7 Web API RESTful with EF 7 + MySQL + MongoDB + JWT</Description>
     <UserSecretsId>8cfe486e-c64a-40d8-85db-edd0dcafbd3b</UserSecretsId>
   </PropertyGroup>
 

@@ -30,4 +30,7 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		description = .NET 7 Web API RESTful with EF 7 + MySQL + MongoDB + JWT
+	EndGlobalSection
 EndGlobal
