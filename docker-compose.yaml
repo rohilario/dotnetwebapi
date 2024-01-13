@@ -5,21 +5,32 @@ services:
     image: mysql:latest
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: your_database_name
+      MYSQL_DATABASE: dotnetwebapi
       MYSQL_USER: root
       MYSQL_PASSWORD: root
     ports:
       - "3306:3306"
+
+  mongoDB:
+    image: mongo:latest
+    environment:
+        MONGO_INITDB_ROOT_USERNAME: root
+        MONGO_INITDB_ROOT_PASSWORD: root
+    ports:
+      - "27017:27017"
       
   dotnetwebapi:
-    build: .
+    build:
+        dockerfile: Dockerfile
+        context:.
     depends_on:
-      - ms-sql-server
+      - mysql
+      - mongoDB
     environment:
       DbServer: "mysql"
       DbPort: "33060"
       DbUser: "root"
       Password: "root"
-      Database: "bookDb"
+      Database: "dotnetwebapi"
     ports: 
       - "8080:80"
