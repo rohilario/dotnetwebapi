@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using Microsoft.OpenApi.Models;
 using Microsoft.AspNetCore.Authorization;
-
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -83,6 +83,13 @@ builder.Services.AddSwaggerGen(x =>
 });
 });
 
+const string logPath = "../log/serilog_example-.log";
+var logger = new LoggerConfiguration()
+    .WriteTo.Console()
+    .WriteTo.File(logPath, rollingInterval: RollingInterval.Day)
+    .CreateLogger();
+builder.Logging.ClearProviders();
+builder.Logging.AddSerilog(logger);
 
 //Build app
 var app = builder.Build();

@@ -14,8 +14,17 @@ namespace dotnetwebapi.Services
         {
             _dbContext = dbContext;
         }
+
+        private ILogger<Userervice> _logger;
+
+        public void Userervicelog(ILogger<Userervice> logger)
+        {
+            _logger = logger;
+        }
+
         public IEnumerable<User> GetUserList()
         {
+            _logger.LogInformation("Create new user | {username}", _dbContext.User.ToList());
             return _dbContext.User.ToList();
         }
         public User GetUserById(int id)
