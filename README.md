@@ -1,12 +1,14 @@
 # DotNET Web API
-API RESTFULL
+
+Base project of a RESTful API web application made with .NET 7 with JWT authentication and logs.
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Price](https://img.shields.io/badge/price-FREE-0098f7.svg)](https://github.com/codedthemes/mantis-free-react-admin-template/blob/main/LICENSE)
 [![GitHub package version](https://img.shields.io/github/package-json/v/codedthemes/mantis-free-react-admin-template)](https://github.com/codedthemes/mantis-free-react-admin-template/)
 
 ## Description
 
-```
+
 |  Stack                                         |  Description                                                      |
 | ---------------------------------------------- | :---------------------------------------------------------------- |
 | ✓ .NET Core 7 Web API Project Base             | ASP NET Web API Project Base                                      |
@@ -18,7 +20,9 @@ API RESTFULL
 | ✓ Serilog                                      | ✓ Make logs                                                       |
 | ✓ Swagger                                      | ✓ Open API Swagger Test / Doc                                     |
 
-```
+## Requeriments
+✓ Docker
+✓ Docker Compose
 
 ## Getting started
 
