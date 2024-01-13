@@ -46,4 +46,10 @@ npm run build
 ```
 
 ## Documentation
-[Dot Net Web API documentation](http://localhost/swagger) helps you out in all aspects from Installation to deployment.
+[Dot Net Web API documentation](http://localhost/swagger)
+
+## Special thanks
+Squadra Digital
+
+## Developed for
+BootCamp Squadra Digital 2024 - Desafio Final
