@@ -3,6 +3,8 @@
 Base project for a RESTful API web application made with .NET 7 with JWT authentication and logs. 
 All CRUD methods with their respective HTTP verbs (GET, POST, PUT and PATH) were implemented for the 3 base classes of this project.
 
+Implemented unit tests with xunit.
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Price](https://img.shields.io/badge/price-FREE-0098f7.svg)](https://github.com/codedthemes/mantis-free-react-admin-template/blob/main/LICENSE)
 
