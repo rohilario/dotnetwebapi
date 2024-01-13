@@ -24,7 +24,37 @@ Implemented unit tests with xunit.
 ## Requeriments
 -  ✓ Docker
 -  ✓ Docker Compose
-   
+
+## Diagram Class ##
+
+``` mermaid
+
+classDiagram
+  class User {
+    - Int UserId
+    - String UserName
+    - String UserCpf
+    - String Passwd
+  }
+
+  class Permission {
+    - Int PermissionId
+    - String PermissionName
+    - String PermissionDescription
+  }
+
+  class UserPermission {
+    - Int UserPermissionId
+    - int UserId
+    - Int PermissionId
+  }
+
+  User "1" *-- "N" Permission
+
+
+```
+
+
 ## Getting started
 Clone from GitHub
 
