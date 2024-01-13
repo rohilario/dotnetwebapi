@@ -1,14 +1,12 @@
 # DotNET Web API
 
-Base project of a RESTful API web application made with .NET 7 with JWT authentication and logs.
+Base project for a RESTful API web application made with .NET 7 with JWT authentication and logs. 
+All CRUD methods with their respective HTTP verbs (GET, POST, PUT and PATH) were implemented for the 3 base classes of this project.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Price](https://img.shields.io/badge/price-FREE-0098f7.svg)](https://github.com/codedthemes/mantis-free-react-admin-template/blob/main/LICENSE)
-[![GitHub package version](https://img.shields.io/github/package-json/v/codedthemes/mantis-free-react-admin-template)](https://github.com/codedthemes/mantis-free-react-admin-template/)
 
 ## Description
-
-
 |  Stack                                         |  Description                                                      |
 | ---------------------------------------------- | :---------------------------------------------------------------- |
 | ✓ .NET Core 7 Web API Project Base             | ASP NET Web API Project Base                                      |
@@ -21,15 +19,14 @@ Base project of a RESTful API web application made with .NET 7 with JWT authenti
 | ✓ Swagger                                      | ✓ Open API Swagger Test / Doc                                     |
 
 ## Requeriments
-✓ Docker
-✓ Docker Compose
-
+-  ✓ Docker
+-  ✓ Docker Compose
+   
 ## Getting started
-
 Clone from GitHub
 
 ```
-git clone [https://github.com/codedthemes/mantis-free-react-admin-template.git](https://github.com/rohilario/dotnetwebapi.git)
+git clone https://github.com/rohilario/dotnetwebapi.git
 
 ```
 
@@ -49,5 +46,4 @@ npm run build
 ```
 
 ## Documentation
-
 [Dot Net Web API documentation](http://localhost/swagger) helps you out in all aspects from Installation to deployment.
