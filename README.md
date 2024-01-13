@@ -62,20 +62,20 @@ Clone from GitHub
 git clone https://github.com/rohilario/dotnetwebapi.git
 
 ```
+## debug/develop with hot reload
+```
+dotnet run --watch
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
 ```
 
 ### Compiles and minifies for production
 ```
-npm run build
+docker-compose up --build -d
+```
+
+### Down and clean All
+```
+docker-compose down
 ```
 
 ## Documentation
