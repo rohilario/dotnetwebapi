@@ -49,8 +49,8 @@ classDiagram
     - Int PermissionId
   }
 
-  User "1" *-- "N" Permission
-
+  User "1" *-- "N" UserPermission
+  
 
 ```
 
