@@ -19,6 +19,7 @@ Implemented unit tests with xunit.
 | ✓ MVC                                          | ✓ MVC Arch.                                                       |
 | ✓ Serilog                                      | ✓ Make logs                                                       |
 | ✓ Swagger                                      | ✓ Open API Swagger Test / Doc                                     |
+| ✓ XUnit                                        | ✓ For unit tests.                                                 |
 
 ## Requeriments
 -  ✓ Docker
