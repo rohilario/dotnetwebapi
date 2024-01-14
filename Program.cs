@@ -57,13 +57,12 @@ var mongoClient = new MongoClient(builder.Configuration["ConnectionStrings:Mongo
 var database = mongoClient.GetDatabase("db_dotnetwebapi");
 builder.Services.AddSingleton<IMongoDatabase>(database);
 
-
 // Adiciona servico ao container.
 builder.Services.AddControllers();
 
 // Aplica Swagger para documentar a API.
 builder.Services.AddEndpointsApiExplorer();
-// Ajustar Swagger para ter os campos do Token
+// Ajustar Swagger para ter o Authorize e demais configs
 builder.Services.AddSwaggerGen(x =>
 {
     x.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
@@ -104,7 +103,7 @@ builder.Services.AddSwaggerGen(x =>
 });
 
 
-
+// Add Serilog
 const string logPath = "../log/serilog-dotnetwebapi.log";
 var logger = new LoggerConfiguration()
     .WriteTo.Console()
@@ -117,11 +116,8 @@ builder.Logging.AddSerilog(logger);
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-
 app.UseSwagger();
 app.UseSwaggerUI();
-
-
 
 app.UseHttpsRedirection();
 app.UseAuthorization();
