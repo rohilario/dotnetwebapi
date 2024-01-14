@@ -89,7 +89,7 @@ builder.Services.AddSwaggerGen(x =>
 });
 });
 
-const string logPath = "../log/serilog_example-.log";
+const string logPath = "../log/serilog-dotnetwebapi.log";
 var logger = new LoggerConfiguration()
     .WriteTo.Console()
     .WriteTo.File(logPath, rollingInterval: RollingInterval.Day)
