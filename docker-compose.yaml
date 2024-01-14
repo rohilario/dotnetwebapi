@@ -1,7 +1,7 @@
 ﻿version: '3'
 
 services:
-  mysql:
+  mysqldb:
     image: mysql:latest
     environment:
       MYSQL_ROOT_PASSWORD: root
@@ -24,7 +24,7 @@ services:
       dockerfile: Dockerfile
       context: .
     depends_on:
-      - mysql
+      - mysqldb
       - mongodb
     environment:
       DbServer: "mysql"
