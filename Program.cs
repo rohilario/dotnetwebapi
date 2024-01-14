@@ -96,8 +96,17 @@ builder.Services.AddSwaggerGen(x =>
 
 builder.Services.AddSwaggerGen(c =>
 {
-c.SwaggerDoc("v1", new OpenApiInfo { Title = "Swagger - App .NET", Version = "v1" , Description = "API RESTful com .NET 7."
-    ,Contact = { Email = "mailto:rodrigohilariocomercial@gmail.com" }
+    c.SwaggerDoc
+        ("v1", new OpenApiInfo
+        {
+            Title = "Swagger - App .NET"
+            ,
+            Version = "v1"
+            ,
+            Description = "API RESTful com .NET 7."
+            ,
+            Contact = { Email = "mailto:rodrigohilariocomercial@gmail.com" }
+        });
 });
 
 const string logPath = "../log/serilog-dotnetwebapi.log";
