@@ -25,12 +25,12 @@ namespace dotnetwebapi.Services
 
 			};
 
-			var tokenHandler = new JwtSecurityTokenHandler();
-			var token = tokenHandler.CreateToken(tokenConfig);
+			var tokenHandlerObj = new JwtSecurityTokenHandler();
+			var tokenHandler = tokenHandlerObj.CreateToken(tokenConfig);
 			//hash para retornar
-			var tokenString = tokenHandler.WriteToken(token);
+			var token = tokenHandlerObj.WriteToken(tokenHandler);
 
-			return new { tokenString };
+			return new { token };
 			
 		}
 

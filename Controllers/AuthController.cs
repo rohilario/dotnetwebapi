@@ -3,6 +3,12 @@ using dotnetwebapi.Services;
 using dotnetwebapi.Models;
 using System.Diagnostics;
 using Newtonsoft.Json;
+using MongoDB.Bson;
+using MongoDB.Driver;
+using MongoDB.Driver.Linq;
+using Microsoft.Extensions.Primitives;
+using Newtonsoft.Json;
+
 
 namespace dotnetwebapi.Controllers
 {
@@ -11,10 +17,13 @@ namespace dotnetwebapi.Controllers
     public class AuthController : ControllerBase
     {
         private readonly IUserService userService;
+        private readonly IMongoCollection<Auth> _authCollection;
 
-        public AuthController(IUserService _userService)
+
+        public AuthController(IUserService _userService, IMongoDatabase database)
         {
             userService = _userService;
+            _authCollection = database.GetCollection<Auth>("Auth");
         }
 
         [HttpPost]
@@ -24,13 +33,15 @@ namespace dotnetwebapi.Controllers
             var resultUserService = JsonConvert.SerializeObject(User);
             User userObject = JsonConvert.DeserializeObject<User>(resultUserService);
 
-            Console.WriteLine("resultUserService" + resultUserService);
-            Console.WriteLine("userObject" + userObject.UserCpf);
-
-            if (userObject.UserName == "Hilario" && userObject.passwd == "123")
+            if (userObject.UserName == username && userObject.passwd == passwd)
             {
+
                 var token = TokenService.GenerateToken(User);
+                Auth tokenObj = JsonConvert.DeserializeObject<Auth>(token.ToJson());
+                Console.WriteLine("jsonObject" + tokenObj.Token);
+                _authCollection.InsertOne(tokenObj);
                 return Ok(token);
+
             }
 
             return BadRequest("Usuario ou senhas invalidos!");

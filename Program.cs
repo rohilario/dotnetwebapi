@@ -11,6 +11,7 @@ using Swashbuckle.AspNetCore.SwaggerGen;
 using Microsoft.OpenApi.Models;
 using Microsoft.AspNetCore.Authorization;
 using Serilog;
+using MongoDB.Driver;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -46,6 +47,11 @@ builder.Services.AddDbContext<APIDbContext>(options =>
     ,ServerVersion.Parse("8.2.0-Mysql")
     )
 );
+// Adiciona a Conexao do MongoDB
+var mongoClient = new MongoClient(builder.Configuration["ConnectionStrings:MongoDB"]);
+var database = mongoClient.GetDatabase("db_dotnetwebapi");
+builder.Services.AddSingleton<IMongoDatabase>(database);
+
 
 // Adiciona servico ao container.
 builder.Services.AddControllers();
