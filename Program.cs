@@ -92,22 +92,18 @@ builder.Services.AddSwaggerGen(x =>
         }
 
 });
-});
-
-builder.Services.AddSwaggerGen(c =>
-{
-    c.SwaggerDoc
-        ("v1", new OpenApiInfo
+    x.SwaggerDoc
+        ("v1", new OpenApiInfo()
         {
             Title = "Swagger - App .NET"
             ,
             Version = "v1"
             ,
             Description = "API RESTful com .NET 7."
-            ,
-            Contact = { Email = "mailto:rodrigohilariocomercial@gmail.com" }
         });
 });
+
+
 
 const string logPath = "../log/serilog-dotnetwebapi.log";
 var logger = new LoggerConfiguration()
@@ -123,11 +119,7 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 
 app.UseSwagger();
-app.UseSwaggerUI(x =>
-    x.SwaggerEndpoint("/swagger/v1/swagger.json", "Dot NET Web API")
-    
-
-);
+app.UseSwaggerUI();
 
 
 
