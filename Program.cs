@@ -104,7 +104,7 @@ builder.Services.AddSwaggerGen(x =>
 
 
 // Add Serilog
-const string logPath = "../log/serilog-dotnetwebapi.log";
+const string logPath = "./log/serilog-dotnetwebapi.log";
 var logger = new LoggerConfiguration()
     .WriteTo.Console()
     .WriteTo.File(logPath, rollingInterval: RollingInterval.Day)

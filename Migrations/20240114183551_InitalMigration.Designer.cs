@@ -10,8 +10,8 @@ using dotnetwebapi.Data;
 namespace dotnetwebapi.Migrations
 {
     [DbContext(typeof(APIDbContext))]
-    [Migration("20240112151645_AddedPasswdToUser")]
-    partial class AddedPasswdToUser
+    [Migration("20240114183551_InitalMigration")]
+    partial class InitalMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

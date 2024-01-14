@@ -40,9 +40,11 @@
     <Folder Include="Models\" />
     <Folder Include="Services\" />
     <Folder Include="logs\" />
+    <Folder Include="tests\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Services\" />
     <None Remove="logs\" />
+    <None Remove="tests\" />
   </ItemGroup>
 </Project>
