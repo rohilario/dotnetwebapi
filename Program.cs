@@ -12,6 +12,11 @@ using Microsoft.OpenApi.Models;
 using Microsoft.AspNetCore.Authorization;
 using Serilog;
 using MongoDB.Driver;
+using MongoDB.Driver.Core.Misc;
+using NuGet.Protocol.Core.Types;
+using System.Buffers.Text;
+using System.Composition;
+using System.Drawing;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -89,6 +94,12 @@ builder.Services.AddSwaggerGen(x =>
 });
 });
 
+builder.Services.AddSwaggerGen(c =>
+{
+c.SwaggerDoc("v1", new OpenApiInfo { Title = "Swagger - App .NET", Version = "v1" , Description = "API RESTful com .NET 7."
+    ,Contact = { Email = "mailto:rodrigohilariocomercial@gmail.com" }
+});
+
 const string logPath = "../log/serilog-dotnetwebapi.log";
 var logger = new LoggerConfiguration()
     .WriteTo.Console()
@@ -103,7 +114,11 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 
 app.UseSwagger();
-app.UseSwaggerUI();
+app.UseSwaggerUI(x =>
+    x.SwaggerEndpoint("/swagger/v1/swagger.json", "Dot NET Web API")
+    
+
+);
 
 
 
