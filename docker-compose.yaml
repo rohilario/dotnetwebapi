@@ -14,21 +14,21 @@ services:
   mongoDB:
     image: mongo:latest
     environment:
-        MONGO_INITDB_ROOT_USERNAME: root
-        MONGO_INITDB_ROOT_PASSWORD: root
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
     ports:
       - "27017:27017"
       
   dotnetwebapi:
     build:
-        dockerfile: Dockerfile
-        context:.
+      dockerfile: Dockerfile
+      context: .
     depends_on:
       - mysql
       - mongoDB
     environment:
       DbServer: "mysql"
-      DbPort: "33060"
+      DbPort: "3306"
       DbUser: "root"
       Password: "root"
       Database: "dotnetwebapi"
