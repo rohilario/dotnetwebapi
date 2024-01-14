@@ -25,7 +25,7 @@ services:
       context: .
     depends_on:
       - mysql
-      - mongoDB
+      - mongodb
     environment:
       DbServer: "mysql"
       DbPort: "3306"
