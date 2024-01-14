@@ -28,7 +28,6 @@ namespace dotnetwebapi.Controllers
         }
 
         [HttpPost("adduser")]
-        [Authorize]
         public User AddUser(User user)
         {
             return userService.AddUser(user);
@@ -40,13 +39,6 @@ namespace dotnetwebapi.Controllers
         {
             return userService.GetUserById(Id);
         }
-
-        //[HttpGet("getusertbyauth")]
-        //public User GetUserByAuth(string name, string passwd)
-        //{
-        //    var teste = userService.GetUserByAuth(name, passwd);
-        //    return teste;
-        //}
 
     }
 }
