@@ -28,6 +28,9 @@ jobs:
       - name: dotnet publish
         run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
 
+      - name: Install ef global
+        run: dotnet tool install --global dotnet-ef --version 7.0.0
+
       - name: Run EF Migrations
         run: dotnet ef database update
 
